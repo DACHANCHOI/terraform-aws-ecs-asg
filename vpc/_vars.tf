@@ -1,0 +1,19 @@
+variable "env" {}
+variable "name" {}
+variable "owner" {}
+variable "region" {}
+
+variable "vpc_cidr" {}
+variable "azs" {}
+variable "private_subnets" {}
+variable "public_subnets" {}
+variable "database_subnets" {}
+variable "enable_ipv6" {}
+variable "enable_nat_gateway" {}
+variable "create_database_nat_gateway_route" {}
+variable "create_database_subnet_route_table" {}
+variable "single_nat_gateway" {}
+variable "private_subnet_tags" {}
+variable "public_subnet_tags" {}
+variable "vpc_tags" {}
+variable "tags" {}

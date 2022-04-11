@@ -57,7 +57,7 @@ locals {
   load_balancer_type         = var.load_balancer_type
   alb_name                   = "${var.env}-${var.alb_name}-${var.ecs_service_name}"
   http_sg_name               = format("%s-http-sg", "${var.env}-${var.alb_name}")
-  target_group_arns          = [module.alb.target_group_arns[1]]
+  target_group_arns          = [module.alb.target_group_arns[0]]
   target_group_name          = "tg-"
   http_tcp_listeners         = var.http_tcp_listeners
   http_tcp_listener_rules    = var.http_tcp_listener_rules
@@ -66,14 +66,8 @@ locals {
       name_prefix      = local.target_group_name
       backend_protocol = var.backend_protocol
       backend_port     = var.backend_port
-      target_type      = "ip"
-    },
-    {
-      name_prefix      = local.target_group_name
-      backend_protocol = var.backend_protocol
-      backend_port     = var.backend_port
       target_type      = var.target_type
-    },
+    }
   ]
 
   # efs

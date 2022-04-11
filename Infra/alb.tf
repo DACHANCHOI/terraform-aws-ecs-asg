@@ -19,5 +19,6 @@ module "alb" {
   security_groups         = [module.http.security_group_id]
   subnets                 = local.public_subnet_ids
   http_tcp_listeners      = local.http_tcp_listeners
+  target_groups           = local.target_groups
   http_tcp_listener_rules = local.http_tcp_listener_rules
 }

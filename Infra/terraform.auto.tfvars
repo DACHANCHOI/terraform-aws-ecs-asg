@@ -2,22 +2,20 @@ service_name               = "dcc-was"
 owner                      = "dcc"
 env                        = "dev"
 region                     = "ap-northeast-2"
-aws_account_id             = "014842949473"
+aws_account_id             = ""
 
 #autoScaling
-// as_name                      = "example-asg"
-as_min_size                  = 1
-as_max_size                  = 4
+as_min_size                  = 2
+as_max_size                  = 2
 as_desired_capacity          = 2
 as_wait_for_capacity_timeout = 0
 as_health_check_type         = "EC2"
 as_launch_template_version   = "$Latest"
 protect_from_scale_in        = true
 # launch template
-// launch_template_name         = "example-asg"
 launch_template_description  = "Launch template example"
-// instance_name                = "launch-template-ec2"
-image_id                     = "ami-033a6a056910d1137"
+# ECS Optimized AMI
+image_id                     = "ami-04c0ac9468f496b8e"
 instance_type                = "t2.micro"
 key_name                     = "Mac-DC"
 iam_instance_profile_arn     = ""
@@ -52,12 +50,12 @@ container_port             = 80
 launch_type                = "EC2"
 capacity_provider_weight   = 100
 capacity_provider_base     = 1
-deployment_controller      = "CODE_DEPLOY"
-// deployment_controller   = "ECS"
+// deployment_controller      = "CODE_DEPLOY"
+deployment_controller   = "ECS"
 
 ########################## ALB
 load_balancer_type         = "application"
-target_type                = "instance"
+target_type                = "ip"
 backend_protocol           = "HTTP"
 backend_port               = "80"
 alb_name                   = "alb"
@@ -72,7 +70,6 @@ http_tcp_listeners = [
       status_code  = "403"
     }
   }
-
 ]
 http_tcp_listener_rules = [
   {

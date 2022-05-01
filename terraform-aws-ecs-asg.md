@@ -21,4 +21,4 @@ terraform 코드를 활용한 AWS ECS 프로비저닝
 1. git clone [https://github.com/DACHANCHOI/terraform-aws-ecs-asg.git](https://github.com/DACHANCHOI/terraform-aws-ecs-asg.git)
 2. 환경변수 설정 ([aws_account_id](https://github.com/DACHANCHOI/terraform-aws-ecs-asg/blob/main/Infra/terraform.auto.tfvars))
 3. terraform Backend 수정 ([vpc](https://github.com/DACHANCHOI/terraform-aws-ecs-asg/blob/main/vpc/_backend.tf), [infra](https://github.com/DACHANCHOI/terraform-aws-ecs-asg/blob/main/Infra/_backend.tf))
-4. terraform init && apply
+4. terraform init && apply 

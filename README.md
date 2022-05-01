@@ -3,6 +3,7 @@
 ### Introduction
 
 terraform 코드를 활용한 AWS ECS 프로비저닝
+![image](https://user-images.githubusercontent.com/77256060/166133667-f05a7d29-d142-47b1-9936-e8217644da5f.png)
 
 ### Terraform Workspace List
 

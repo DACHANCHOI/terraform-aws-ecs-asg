@@ -17,8 +17,8 @@ locals {
   create_database_nat_gateway_route  = var.create_database_nat_gateway_route
   tags                               = merge(var.tags, { Owner = var.owner, Environment = var.env })
   vpc_tags                           = merge(var.vpc_tags, { Name = local.name })
-  public_subnet_tags                 = { Name = "${var.env}-Public" }
-  private_subnet_tags                = { Name = "${var.env}-Private-AP" }
+  public_subnet_tags                 = merge(var.public_subnet_tags, { Name = format("%s-public-sb", var.name) })
+  private_subnet_tags                = merge(var.private_subnet_tags, { Name = format("%s-private-sb", var.name) })
   database_subnet_group_tags         = { Name = "${var.env}-Private-DB"}
   
 }
